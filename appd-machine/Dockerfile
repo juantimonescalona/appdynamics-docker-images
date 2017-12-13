@@ -2,14 +2,10 @@ FROM openjdk:8-jre-slim AS builder
 
 MAINTAINER mark.prichard@appdynamics.com
 
-ARG APPD_AGENT_VERSION 
-ARG APPD_AGENT_SHA256
+ARG APPD_AGENT_VERSION = 4.3.5.13
 
-COPY MachineAgent-${APPD_AGENT_VERSION}.zip /
-RUN echo "${APPD_AGENT_SHA256} *MachineAgent-${APPD_AGENT_VERSION}.zip" >> appd_checksum \
-    && sha256sum -c appd_checksum \
-    && rm appd_checksum \
-    && unzip -oq MachineAgent-${APPD_AGENT_VERSION}.zip -d /tmp 
+ADD MachineAgent-${APPD_AGENT_VERSION}.zip /
+RUN unzip -oq MachineAgent-${APPD_AGENT_VERSION}.zip -d /tmp 
 
 
 FROM openjdk:8-jre-slim
