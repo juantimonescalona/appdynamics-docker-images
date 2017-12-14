@@ -1,3 +1,7 @@
+# ACCOUNT FOR APPDYNAMICS
+testing.jtimon@yopmail.com
+testing
+
 # INFO 
 
 oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git --context-dir=appd-machine --allow-missing-images --name=appdynamicsmachineagent
