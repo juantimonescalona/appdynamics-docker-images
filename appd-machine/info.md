@@ -1,6 +1,11 @@
 # ACCOUNT FOR APPDYNAMICS
-testing.jtimon@yopmail.com
-testing
+testing.jtimon@yopmail.com /// testing
+
+# LOGIN PAGE FOR COOKIES
+https://login.appdynamics.com/sso/authenticate/?site=download_serverusername=testing.jtimon@yopmail.com&password=testing
+username=testing.jtimon@yopmail.com&password=testing
+https://download.appdynamics.com/download/
+https://download.appdynamics.com/download/prox/download-file/machine/4.3.5.13/MachineAgent-4.3.5.13.zip
 
 # INFO 
 
