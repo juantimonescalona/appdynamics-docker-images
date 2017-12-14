@@ -15,7 +15,13 @@ ARG APPDYNAMICS_CONTROLLER_SSL_ENABLED
 ARG APPDYNAMICS_CONTROLLER_PORT
 ARG MACHINE_AGENT_PROPERTIES
 
-ADD https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip MachineAgent-${APPD_AGENT_VERSION}.zip
+RUN wget --save-cookies cookies.txt \
+     --keep-session-cookies \
+     --post-data 'username=testing.jtimon@yopmail.com&password=testing' \
+     --delete-after \
+	   https://login.appdynamics.com/sso/login/
+     
+RUN wget --load-cookies cookies.txt https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip MachineAgent-${APPD_AGENT_VERSION}.zip
 RUN unzip -oq MachineAgent-${APPD_AGENT_VERSION}.zip -d /opt/appdynamics
 
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
