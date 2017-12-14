@@ -8,6 +8,8 @@ oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git 
 
 oc new-app appdynamicsmachineagent
 
+Falta los volumenes -v /:/hostroot:ro -v /var/run/docker.sock:/var/run/docker.sock \
+
 
 # Documentacion
 https://docs.appdynamics.com/display/PRO43/Integrated+Docker+Visibility
