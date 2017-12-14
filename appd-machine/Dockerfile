@@ -15,7 +15,7 @@ ARG APPDYNAMICS_CONTROLLER_SSL_ENABLED
 ARG APPDYNAMICS_CONTROLLER_PORT
 ARG MACHINE_AGENT_PROPERTIES
 
-RUN wget https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip
-RUN unzip -oq MachineAgent-${APPD_AGENT_VERSION}.zip -d /opt/appdynamics
+RUN wget -O /tmp/MachineAgent-${APPD_AGENT_VERSION}.zip https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip
+RUN unzip -oq /tmp/MachineAgent-${APPD_AGENT_VERSION}.zip -d /opt/appdynamics
 
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
