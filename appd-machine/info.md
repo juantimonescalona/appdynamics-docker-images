@@ -1,6 +1,6 @@
 # INFO 
 
-oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git --context-dir=appd-machine --allow-missing-images --name=evobank/appdynamics-machine-agent
+oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git --context-dir=appd-machine --allow-missing-images --name=appdynamicsmachineagent
 
 oc new-app appdynamics-docker-images/appd-machine --env-file /appd-machine/appdynamics.env
 
