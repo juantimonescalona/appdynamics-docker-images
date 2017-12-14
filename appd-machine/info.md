@@ -1,5 +1,9 @@
 # INFO 
 
+oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git --context-dir=appd-machine --allow-missing-images
+
+oc new-app appdynamics-docker-images/appd-machine --env-file /appd-machine/docker.env
+
 # Documentacion
 https://docs.appdynamics.com/display/PRO43/Integrated+Docker+Visibility
 https://docs.appdynamics.com/display/PRO43/Configuring+Docker+Visibility
