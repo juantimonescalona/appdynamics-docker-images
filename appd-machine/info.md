@@ -6,7 +6,7 @@ https://download.appdynamics.com/download/prox/download-file/machine/4.3.5.13/Ma
 
 oc new-build https://github.com/juantimonescalona/appdynamics-docker-images.git --context-dir=appd-machine --allow-missing-images --name=appdynamicsmachineagent
 
-oc new-app appdynamics-docker-images/appd-machine --env-file /appd-machine/appdynamics.env
+oc new-app appdynamicsmachineagent
 
 
 # Documentacion
