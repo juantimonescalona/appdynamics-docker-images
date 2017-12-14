@@ -21,7 +21,7 @@ RUN wget --save-cookies cookies.txt \
      --delete-after \
 	   https://login.appdynamics.com/sso/login/
      
-RUN wget --load-cookies cookies.txt https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip MachineAgent-${APPD_AGENT_VERSION}.zip
+RUN wget --load-cookies cookies.txt https://download.appdynamics.com/download/prox/download-file/machine/${APPD_AGENT_VERSION}/MachineAgent-${APPD_AGENT_VERSION}.zip
 RUN unzip -oq MachineAgent-${APPD_AGENT_VERSION}.zip -d /opt/appdynamics
 
 CMD ["sh", "-c", "java ${MACHINE_AGENT_PROPERTIES} -jar /opt/appdynamics/machineagent.jar"]
